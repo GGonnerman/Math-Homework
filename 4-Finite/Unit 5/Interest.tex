@@ -1,0 +1,49 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+
+\title{Interest}
+\author{}
+\date{}
+
+\begin{document}
+	
+	\maketitle{}
+	
+	\section{Simple Interest}
+	
+	\begin{equation}
+	    A = Prt
+	    
+	\end{equation}
+	
+	\section{Compound Interest}
+	
+	\section{Continous Interest}
+	
+	\section{Effective Rate of Interest}
+	
+	\section{Present Value}
+	
+	    \subsection{Compound Interest}
+	    
+	    \subsection{Continous Interest}
+
+\end{document}
