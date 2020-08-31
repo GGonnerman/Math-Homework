@@ -1,9 +1,10 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 
 \usepackage{amsmath, amssymb} % Math formatting and symbols
 \usepackage{graphicx} % Insert graphics
 \usepackage{wrapfig} % Allow text to wrap around images
 \usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
 
 \usepackage{enumitem} % Allow for widest tag in enumerate
 
@@ -11,39 +12,88 @@
 
 \newenvironment{adescription}[1]
 {\begin{list}{}%
-		{\renewcommand\makelabel[1]{##1\hfill}%
-			\settowidth\labelwidth{\makelabel{#1}}%
-			\setlength\leftmargin{\labelwidth}
-			\addtolength\leftmargin{\labelsep}}}
-	{\end{list}}
+	{\renewcommand\makelabel[1]{##1\hfill}%
+		\settowidth\labelwidth{\makelabel{#1}}%
+		\setlength\leftmargin{\labelwidth}
+		\addtolength\leftmargin{\labelsep}}}
+{\end{list}}
 
 \newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
 
 \title{Interest}
 \author{}
 \date{}
 
 \begin{document}
-	
+	\setstretch{0.5}
 	\maketitle{}
+
+	\subsection*{1 Preface}
+	\quad{}For the remainder of this paper, the following variables will be as set forth, unless specified otherwise.
 	
-	\section{Simple Interest}
+	\begin{adescription}{\quad{}$m$:}
+		\item[\dquad{}$A$:] Accumulated Amount (\emph{Future Value})
+		\item[\dquad{}$P$:] Principal (\emph{Present Value})
+		\item[\dquad{}$r$:] Nominal Interest Rate Per Year
+		\item[\dquad{}$m$:] Yearly Number of Conversion Periods
+		\item[\dquad{}$t$:] Term (Number of Years)
+		\item[\quad{}As well as...]
+		\item[\dquad{}$i$:] Interest Rate Per Period
+		\begin{equation}
+			\frac{r}{m}
+		\end{equation}
+		\item[\dquad{}$n$:] Total Number of Conversion Periods
+		\begin{equation}
+			m * t
+		\end{equation}
+	\end{adescription}
+	\setstretch{1}
+	
+	\subsection*{2 Simple Interest}
 	
 	\begin{equation}
-	    A = Prt
-	    
+		A = P(1 + rt)
 	\end{equation}
 	
-	\section{Compound Interest}
+	\subsection*{3 Compound Interest} 
+	\begin{itemize}[label=--]
+		\item Interest that is periodically added to the principal
+		\item Earns interest on itself
+	\end{itemize}
 	
-	\section{Continous Interest}
+	\begin{equation}
+		A = P(1 + i)^n
+	\end{equation}
 	
-	\section{Effective Rate of Interest}
+	\subsection*{4 Continuous Compounding Interest}
+
+	\begin{equation}
+		A = Pe^{rt}
+	\end{equation}
 	
-	\section{Present Value}
+	\subsection*{5 Effective Rate of Interest}
+	\dquad{}The \bd{effective rate of interest} is the \bd{annual rate} which would yield the \bd{same accumulated amount} as the \bd{nominal rate} ($r$) compounded $m$ times over the term ($t$). It can also be called the \bd{annual percentage yield}.
+	\begin{equation}
+		r_{eff} = (1 + i)^m - 1
+	\end{equation}
+	where:
+	\begin{adescription}{\quad{}$r_{eff}$:}
+		\item[\quad{}$r_{eff}$:] Effective Rate of Interest
+	\end{adescription}
 	
-	    \subsection{Compound Interest}
+	\subsection*{6 Present Value}
+
+	    \subsubsection*{\dquad{}6.1 Compound Interest}
 	    
-	    \subsection{Continous Interest}
+	    \begin{equation}
+	    	P = A(1 + i)^{-n}
+	    \end{equation}
+	    
+	    \subsubsection*{\dquad{}6.2 Continuous Interest}
+	 
+	    \begin{equation}
+	    	P = Ae^{-rt}
+	    \end{equation}
 
 \end{document}
