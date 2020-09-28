@@ -1,0 +1,87 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+	{\renewcommand\makelabel[1]{##1\hfill}%
+		\settowidth\labelwidth{\makelabel{#1}}%
+		\setlength\leftmargin{\labelwidth}
+		\addtolength\leftmargin{\labelsep}}}
+{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\title{Annuities}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.5}
+	\maketitle{}
+
+	\subsection*{1 Preface}
+	\quad{}For the remainder of this paper, the following variables will be as set forth, unless specified otherwise.
+	\large{Fix this}
+	\begin{adescription}{\quad{}$m$:}
+		\item[\dquad{}$R$:] Periodic Payment
+		\item[\dquad{}$P$:] Present Value
+		\item[\dquad{}$S$:] Future Value
+		\item[\dquad{}$r$:] Nominal Interest Rate Per Year
+		\item[\dquad{}$t$:] Term (\emph{Number of Years})
+		\item[\dquad{}$m$:] Yearly Payment Periods (\emph{Same as number of times compounded per year})
+		\item[As well as...] 
+		\item[\dquad{}$n$:] Total Payment Periods
+		\begin{equation}
+			m * t
+		\end{equation}
+		\item[\dquad{}$i$:] Interest Rate Per Period
+			\begin{equation}
+				\frac{r}{m}
+			\end{equation}
+	\end{adescription}
+	\setstretch{1}
+	
+	\subsection*{2 Future Value "S"}
+	
+	\begin{equation} \label{fv}
+		S = R[ \frac{(1+i)^n-1}{i} ]
+	\end{equation}
+
+	\subsection*{3 Present Value "R"}
+	
+	\begin{equation} \label{pv}
+		P = R[ \frac{1-(1+i)^{-n}}{i} ]
+	\end{equation}
+
+	\subsection*{4 Amortization Formula}
+	The periodic payment $R$ on a loan of $P$ dollars to be amortized over n periods with interest charged at the rate of $i$ per period.
+	
+	\begin{equation} \label{af}
+		R = \frac{Pi}{1-(1+i)^{-n}}
+	\end{equation}
+
+	\subsection*{5 Calculate R when saving up to a value (not paying off)}
+	
+	\begin{equation}
+		R = \frac{Pi}{(1+i)^n-1}
+	\end{equation}
+
+	\subsection*{6 Equity}
+	
+	\begin{itemize}[label=--]
+		\item Find payment per period for loan using the amortization formula (\ref{af})
+		\item Plug that $R$ into present value formula (\ref{pv}) with $n = \text{number of periods remaining}$, save result as \emph{current}.
+		\item Solve for $\text{Total} - \text{current}$
+	\end{itemize}
+
+\end{document}

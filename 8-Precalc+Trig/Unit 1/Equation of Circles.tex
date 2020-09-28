@@ -1,4 +1,4 @@
-\documentclass{article}
+\documentclass[twocolumn]{article}
 
 \usepackage{amsmath, amssymb} % Math formatting and symbols
 \usepackage{graphicx} % Insert graphics
@@ -41,18 +41,18 @@
 %			\item[\dquad{}$(x_2, y_2)$:] Point 2
 %		\end{adescription}
 		\subsection{Distance Formula}
-			\begin{equation}
+			\begin{equation*}
 				d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
-			\end{equation}
+			\end{equation*}
 			where:
 			\begin{adescription}{\dquad{}$d$:}
 				\item[\dquad{}$d$:] Distance between $P_1$ and $P_2$
 			\end{adescription}
 	
 		\subsection{The Midpoint Formula}
-			\begin{equation}
+			\begin{equation*}
 				m = (\frac{x_1+x_2}{2}, \frac{y_1+y_2}{2})
-			\end{equation}
+			\end{equation*}
 			where:
 			\begin{adescription}{\dquad{}$m$:}
 				\item[\dquad{}$m$:] Midpoint between $P_1$ and $P_2$
@@ -60,9 +60,9 @@
 	
 	\section{Equations of Circles}
 		You can draw a circle using an \bd{relationship} not a function.
-		\begin{equation}
+		\begin{equation*}
 			(x - h)^2 + (y - k)^2 = r^2
-		\end{equation}
+		\end{equation*}
 		where:
 			\begin{adescription}{\dquad{}$(h, k)$:}
 				\item[\dquad{}$(h, k)$:] Center Point
@@ -76,9 +76,9 @@
 				\item Looks the same after reflection over Y-Axis
 				\item Has to meet the following requirement(s)...
 			\end{itemize}
-			\begin{equation}
+			\begin{equation*}
 				f(x) = f(-x)
-			\end{equation}
+			\end{equation*}
 			\par One example of such a function is $y = x^2$.
 			\begin{align*}
 				f(4) &= 16 \\
@@ -92,9 +92,9 @@
 				\item Called a \bd{relationship}
 				\item Has to meet the following requirement(s)...
 			\end{itemize}
-			\begin{equation}
+			\begin{equation*}
 				x \mapsto \{-y,  y\}
-			\end{equation}
+			\end{equation*}
 			One example of such a equation is $x = y^2$ but \bd{not} $y = \sqrt{x}$ because that would only allow positive x values.
 			\begin{align*}
 				9^2 &= 81 \\
@@ -107,14 +107,124 @@
 				\item Visually the same after $180\degree{}$ rotation about $(0, 0)$
 				\item Has to meet the following requirement(s)...
 			\end{itemize}
-			\begin{align}
+			\begin{align*}
 				f(x) &= y \\
 				f(-x) &= -y
-			\end{align}
+			\end{align*}
 		One example of such a function is $y = x^3$
 		\begin{align*}
 			f(2) &= 8 \\
 			f(-2) &= -8
 		\end{align*}
+	
+	\section{Equations of  Lines}
+	Assume...
+	\begin{adescription}{\dquad{}$P_2$:}
+		\item[\dquad{}$m$:] Slope
+		\item[\dquad{}$P_1$:] $(x_1, y_1)$
+		\item[\dquad{}$P_2$:] $(x_2, y_2)$
+	\end{adescription}
+	  \subsection{Slope}
+	  	\begin{equation*}
+	  		m = \frac{\text{"Ryse"}}{\text{Run}} = \frac{y_2-y_1}{x_2-x_1}
+	  	\end{equation*}
+	  \subsection{Forms}
+	    \subsubsection{Slope-Intercept Form}
+	    	\begin{equation*}
+	    		y = mx + b
+	    	\end{equation*}
+    		where:
+    		\begin{adescription}{\dquad{}$b$:}
+    			\item[\dquad{}$b$:] x-intercept
+    		\end{adescription}
+	    \subsubsection{Point Slope Form}
+	    	If you need point-slope form, just sub out values. However, if you need to find slope-intercept form you can solve for $y$.
+	    	\begin{equation*}
+	    		y - y_1 = m(x - x_1)
+	    	\end{equation*}
+	    \subsubsection{Intercept Form}
+	    	\begin{equation*}
+	    		\frac{x}{a} + \frac{y}{b} = 1
+	    	\end{equation*}
+    		where:
+    		\begin{adescription}{\dquad{}$b$:}
+    			\item[\dquad{}$a$:] x-intercept, point (a, 0) falls on the line
+    			\item[\dquad{}$b$:] y-intercept, point (0, b) falls on the line
+    		\end{adescription}
+    		This form can be converted into \bd{General Form} through the multiplication of the least common multiple of $a$ and $b$. Then subtracting   the value on the right side of the equation.
+	    \subsubsection{General Form}
+	    	\begin{equation*}
+	    		Ax + By + C = 0
+	    	\end{equation*}
+    		where:
+    		\begin{itemize}[label=--]
+    			\item[] $A$ is non-negative
+    			\item[] $A$, $B$, and $C$ are all \emph{integers}
+    		\end{itemize}
+	  \subsection{Relationships of Lines}
+	    \subsubsection{Parallel Lines}
+	    	-- \bd{same slopes}.
+	    \subsubsection{Perpendicular Lines}
+	    	-- \bd{opposite reciprocal slopes}. \\
+	    	Consider the following where $m_1$ and $m_2$ are perpendicular.
+	    	\begin{align*}
+	    		m_1 = 3/8 \\
+	    		m_2 = -8/3
+	    	\end{align*}
+    
+    \section{Functions and Equations}
+    
+    \subsection{Is it a function?}
+   	-- Each $x$ only maps to one $y$
+   	
+   	\section{Domain \& Range}
+   	
+   	\subsection{Formatting}
+   	Example...
+   	\begin{align*}
+   		D&: (-1,2] \\
+   		R&: (-\infty, 12)
+   	\end{align*}
+   \begin{itemize}[label=--]
+   	\item "(", ")" means exclusive
+   	\item "[", "]" means inclusive
+   	\item \bd{Never} use [] with $\infty$
+   \end{itemize}
+   	
+   	\subsection{Zeros}
+   	Solve for when $y = 0$ \\
+   	They are y-ints
+   	
+   	\subsection{Increasing and Decreasing}
+   	\par \bd{Never} use "[", "]", always "(", ")" \\
+   	\bd{Always} Least $\to$ Greatest \\
+   	
+   	\subsection{New Functions}
+   	
+   	\subsubsection{Greatest Integer Function (Floor)}
+    Represented by
+    \begin{equation*}
+    	f(x) = [[x]]
+    \end{equation*}
+   	
+   	Left side solid, right side empty
+   	
+   	\subsubsection{Peace Function}
+   	\par An equation, but with conditionals
+   	
+   	Example...
+   	\begin{align*}
+	   	f(x) = 
+	   	\begin{cases}
+	   		x^2 - 3      &\quad \text{if } x \ge 3 \\
+	   		-2x^4 + 9x^3 &\quad \text{if } x < 3
+	   	\end{cases}
+   \end{align*}
+ 
+ 		Plug it into calculator by multiplying things and conditions
+ 		
+ 		\begin{equation*}
+ 			f(x) = (x^2 - 3)(x \ge 3) + (-2x^4 + 9x^3)(x < 3)
+ 		\end{equation*}
 
 \end{document}
