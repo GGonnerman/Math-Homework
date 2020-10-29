@@ -1,0 +1,67 @@
+\documentclass[]{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\title{Graph of Equations}
+\author{}
+\date{}
+
+\begin{document}
+	%\setstretch{0.5}
+	\maketitle{}
+
+	\section{Trig function transformations}
+	Assume...
+	\begin{adescription}{\dquad{}$d$:}
+		\item[\dquad{}$a$:] Vertical stretch/shrink
+		\item[\dquad{}$b$:] Horizontal stretch/shrink
+		\item[\dquad{}$c$:] Horizontal "phase" shift
+		\item[\dquad{}$d$:] Vertical shift
+	\end{adescription}
+	\begin{equation}
+		y = d + a * sin(bx - c)
+	\end{equation}
+	Example...
+	\par A sine curve with a period $\pi$, amplitude of 2, right phrase of $\frac{\pi}{2}$, and a vertical shift down 4 \\
+	$a$ is derived from amplitude, positive if reflection is not specified, $a = 2$  \\
+	$d$ is derived from vertical shift, $d = -4$
+	\begin{equation*}
+		b = \frac{2\pi}{\text{period}} = \frac{2\pi}{\pi} = 2
+	\end{equation*}
+	\begin{equation*}
+		c = b * \text{shift} = 2 * \frac{\pi}{2} = \pi
+	\end{equation*}
+	Then you put it all together...
+	\begin{equation*}
+		y = -4 + 2 * \sin(2x - \pi)
+	\end{equation*}
+	
+	Pure equations...
+	\begin{align*}
+		a &= \text{amplitude} \\
+		b &= \frac{2\pi}{\text{period}} \\
+		c &= 2 * \text{phase shift} \\
+		d &= \text{vert shift}
+	\end{align*}
+
+\end{document}
