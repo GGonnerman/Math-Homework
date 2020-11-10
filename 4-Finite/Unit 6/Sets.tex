@@ -34,11 +34,11 @@
 	
 	\subsection*{}
 	
-	\subsubsection*{Set Notation}
+	\subsection*{Set Notation}
 	Roster Notation: $ A = \{ a, b, c \} $ or $ A = \{ a, b, c, ..., z \} $ \\
 	Set Builder Notation: $ A = \{\,x \mid x \text{ is a lowercase character in the Latin alphabet }\,\}$
 	
-	\subsubsection*{Terminology and implications}
+	\subsection*{Terminology and implications}
 	Given sets...
 	\begin{align*}
 		A &= \{ a, b, c \} \\
@@ -63,7 +63,7 @@
 		& A^c = \{ d, e, f, ..., z \} & &\text{The compliment of A is all elements in the universal set and not in A}
 	\end{align*}
 	
-	\subsubsection*{Laws and Properties}
+	\subsection*{Laws and Properties}
 	Commutative
 	\begin{align*}
 		A \cup B &= B \cup A \\
@@ -85,34 +85,50 @@
 		(A \cap B)^c &= A^c \cup B^c
 	\end{align*}
 	
-	\subsubsection*{Combinatorics}
+	\subsection*{Combinatorics}
 	\begin{align*}
 		n(S) &= \text{Number of unique items in set S} \\
 		n(A \cup B) &= n(A) + n(B) - n(A \cap B) \\
 		n(A \cup B \cup C) &=  n(A) + n(B) + n(C) \\
 										 & - n(A \cap B) - n(A \cap C) \\
 										 & - n(B \cap C) + n(A \cap B \cap C)
-\end{align*}
+	\end{align*}
 
+	\subsection*{Fundamental Counting Principal}
+	
+	\begin{align*}
+		m \text{ ways of performing task } T_1 \\
+		n \text{ ways of performing task } T_2 \\
+		\therefore m * n \text{ ways of performing } T_1 \text{ followed by } T_2
+	\end{align*}
 
-	\subsection*{Graphing Trigonometric Functions}
+	\subsection*{Permutations \& Combinations}
 	
-	Assume... \\
-	\indent $ y = d + a * f(bx - c) $ \\
-	\indent Amplitude = $ \vert a \vert $ \\
-	\indent Vertical Shift =$ d $ \\
-	\indent Phase Shift = $ \frac{c}{b} $ \\
-	\indent X-Scale (change between critical points) = $ \frac{\text{period}}{4} $ \\
-	Period depends on what functions \\
-	\indent sin, cos, csc, sec = $ \frac{2\pi}{b} $ \\
-	\indent tan, cot = $ \frac{\pi}{b} $
+	\subsubsection*{Permutations (Order)}
+	Permutations of a \emph{distinct set} is an arrangement of those objects in a \emph{definite} order.
 	
-	\subsubsection*{Examples...}
-	
-%	\begin{figure}[H]
-%		\centering
-%		\includegraphics[width=0.20\textwidth]{cot.png}
-%		\caption{$ y = \cot(x) $}
-%	\end{figure}
+	\begin{align*}
+		P(n, n) &= n! \\
+		P(n, r) &= \frac{n!}{(n - r)!} \\
+		P(n, r) &= n \text{ nPr } r
+	\end{align*}
+
+	Permutations of a \emph{non-distinct set}.
+	\begin{equation*}
+		P(n, r) = \frac{n!}{ n_1! * n_2! \dots n_n! }
+	\end{equation*}
+
+	An example...
+	\begin{center}
+		ATLANTA \\
+		A: 3, T: 2, N: 1, L: 1, Total: 7 \\
+		$ \frac{7!}{3! * 2! * 1! * 1!} $
+	\end{center}
+
+	\subsubsection*{Combinations (Unordered)}
+	\begin{align*}
+		C(n, r) &= \frac{n!}{r!(n-r)!} \\
+		C(n, r) &= n \text{ nCr } r
+	\end{align*}
 
 \end{document}
