@@ -1,0 +1,71 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+\newcommand{\nine}{\frac{\pi}{2}}
+
+\title{\vspace{-5ex}Trigonometric Identities Cheat sheet  \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{1}
+	\maketitle{}
+	
+	Inverse functions
+	\begin{align*}
+		\sin &= \frac{1}{\csc}  & \csc & = \frac{1}{\sin} \\
+		\cos &= \frac{1}{\sec} & \sec & = \frac{1}{\cos} \\
+		\tan &= \frac{\sin}{\cos}  & \cot & = \frac{\cos}{\sin}
+	\end{align*}
+	Fundamental Identities
+	\begin{align*}
+		\sin^2 + \cos^2 &= 1 \\
+		1 + \tan^2 &= \sec^2 \\
+		1 + \cot^2 &= \csc^2
+	\end{align*}
+	Complimentary Angles
+	\begin{align*}
+		\sin(\nine - u) &= \cos(u)  & & & \cos(\nine - u) &= \sin(u) \\
+		\sec(\nine - u) &= \csc(u) & & & \csc(\nine - u) &= \sec(u) \\
+		\tan(\nine - u) &= \cot(u) & & & \cot(\nine - u) &= \tan(u)
+	\end{align*}
+	Odd and Even Functions
+	\begin{align*}
+		\sin(-u) &= -\sin(u)  & & & \csc(-u) &= -\csc(u) \\
+		\tan(-u) &= -\tan(u) & & & \cot(-u) &= -\cot(u) \\
+		\cos(-u) &= \cos(u) & & & \sec(-u) &= \sec(u)
+	\end{align*}
+
+\end{document}
