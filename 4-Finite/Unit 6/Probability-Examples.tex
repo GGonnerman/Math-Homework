@@ -1,0 +1,95 @@
+\documentclass[]{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\title{\vspace{-5ex}Examples \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.82}
+	\maketitle{}
+	
+	\subsection*{Symbols}
+	\begin{align*}
+		n \text{ choose } x = {n \choose x}
+	\end{align*}
+	
+	\subsection*{Children}
+	\par In a \bd{four-child} family, what are the odds of the following?
+	\begin{equation*}
+		\text{Total} = 2^4 = 16
+	\end{equation*}
+	(a) Three girls and a boy in the family?
+	\begin{equation*}
+		\frac{4!}{3!1!} = \frac{24}{6} = 4
+	\end{equation*}
+	(b) A youngest child in the family who is a girl?
+	\begin{equation*}
+		1 * 2^3 = 8
+	\end{equation*}
+	(c) An oldest child and a youngest child in the family who are both boys
+	\begin{equation*}
+		1 * 2^2 * 1 = 4
+	\end{equation*}
+
+	\subsection*{Cards}
+	\begin{equation*}
+		\text{Total} = {52 \choose \text{Number drawn}}
+	\end{equation*}
+	\noindent When drawing \bd{one card} what are the odds it is a \bd{club} or \bd{jack}?
+	\begin{equation*}
+		13 + 4 - 1 = 16
+	\end{equation*}
+
+	\noindent When drawing \bd{two cards} What are the odds it is a \bd{pair}?
+	\begin{equation*}
+		13 * {4 \choose 2}
+	\end{equation*}
+	
+	\subsection*{Coin}
+	\par A coin is tossed \bd{six} times. What are the odds of the following?
+	\begin{equation*}
+		\text{Total} = 2^6 = 64
+	\end{equation*}
+	(a) What are the odds the coin lands on heads more than one?
+	\begin{equation*}
+		1 - \frac{{6 \choose 0} + {6 \choose 1}}{\text{Total}} = 1 - \frac{7}{64}
+	\end{equation*}
+	(b) The coin lands on heads exactly 2 times?
+	\begin{equation*}
+		{6 \choose 2}
+	\end{equation*}
+
+	\subsection*{Defection}
+	\par Lots of 36. Sample of 8. Any defective = rejection. Contains 2 defective. What are the odds of shipping?
+	\begin{equation*}
+		\text{Total} = {36 \choose 8}
+	\end{equation*}
+	\begin{align*}
+		34 \choose 8
+	\end{align*}
+
+\end{document}
