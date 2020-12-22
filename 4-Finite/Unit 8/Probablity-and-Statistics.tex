@@ -1,0 +1,117 @@
+\documentclass[]{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\title{\vspace{-5ex}Probability and Statistics \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.82}
+	\maketitle{}
+	
+	\subsection*{Example Problems}
+	\subsubsection*{Example 1}
+	Three balls are selected at random without replacement from an urn containing four green balls and six red balls. Let the random variable X denote the number of green balls drawn. \\
+	(a) List the outcomes of the experiment. \\
+	\indent \{GGG, GGR, GRG, RGG, GRR, RGR, RRG, RRR\} \\
+	(b) Find the value assigned to each outcome of the experiment by the random variable X. \\
+	\indent \{3, 2, 2, 2, 1, 1, 1, 0\} \\
+	(c) Find the event consisting of the outcomes to which the value of 0 has been assigned by X. \\
+	\indent \{RRR\}
+	
+	\subsubsection*{Example 2}
+	Let X denote the random variable that gives the sum of the faces that fall uppermost when two fair dice are rolled. Find P(X = 2). \\
+	\emph{We know that there are 36 total outcomes and only 1 of those results in X = 2 (a roll of 1 and 1).}
+	\begin{equation*}
+		\frac{1}{36} = 0.03
+	\end{equation*}
+
+	\subsubsection*{Example 3}
+	Determine whether the table gives the probability distribution of the random variable X. Explain your answer.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| }
+			\hline
+				x & -2 & -1 & 0 & 1 & 2 \\
+				P(X=x) & 0.1 & 0.2 & 0.3 & 0.1 & 0.2 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	No, because the sum of the probabilities is less than 1.
+	
+	\subsubsection*{Example 4}
+	Find the expected value E(X) of a random variable X having the following probability distribution.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c| }
+			\hline
+				x & -2 & 2 & 6 & 10 & 14 & 18 \\
+				P(X=x) & 0.18 & 0.09 & 0.19 & 0.09 & 0.12 & 0.33 \\
+				\hline
+		\end{tabular}
+	\end{center}
+	\begin{equation*}
+		E(X) = -2(0.18) + 2(0.09) + 6(0.19) + 10(0.09) + 14(0.12) + 18(0.33) = 9.48
+	\end{equation*}
+
+	\subsubsection*{Example 5}
+	Use the formula $C(n, x)p^xq^{n-x}$ to determine the probability of the given event. \\
+	\indent The probability of exactly \bd{zero} successes in \bd{nine} trials of a binomial experiment in which $p = \frac{1}{2}$
+	\begin{equation*}
+		C(9, 0) * (\frac{1}{4})^0 * (\frac{3}{4})^9 = 0.0751
+	\end{equation*}
+
+	\subsubsection*{Example 6}
+	The scores on an economics examination are normally distributed with a mean of \bd{68} and a standard deviation of \bd{14}. If the instructor assigns a grade of A to \bd{12\%} of the class, what is the lowest score a student may have and still obtain an A? \\
+	\begin{equation*}
+		100\% - 12\% = 88\%
+	\end{equation*}
+	Then, find 88\% on the \emph{Appendix of Tables} which ends up being $\approx$ 1.17 \\
+	Next, add the multiply by the standard deviation and add the mean.
+	\begin{equation*}
+		68 + (1.175 * 14) = 84.45
+	\end{equation*}
+
+	\subsection*{Distribution of Random Variables}
+	Flip a coin three times and let X denote the number of heads.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+			\hline 
+				Outcome & HHH & HHT & HTH & HTT & THH & THT & TTH &  TTT \\
+				Value(x) & 3 & 2 & 2 & 1 & 2 & 1 & 1 & 0 \\
+			\hline
+		\end{tabular}
+	\end{center}
+
+	\subsection*{Binomial Distribution}
+		\begin{equation*}
+			C(n, x) * p^x * q^{n - x}
+		\end{equation*}
+	where... \\
+	\indent n: Number of trials \\
+	\indent x: Number of successes \\
+	\indent p: Chance of success \\
+	\indent q: Chance of failure (1 - p) 
+
+\end{document}
