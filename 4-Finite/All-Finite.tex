@@ -1,0 +1,462 @@
+\documentclass[twocolumn]{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+\newcommand*\ra{$\rightarrow$ }
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\title{Interest}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.5}
+	\maketitle{}
+	
+	\subsection*{1 Preface}
+	\quad{}For the remainder of this paper, the following variables will be as set forth, unless specified otherwise.
+	
+	\begin{adescription}{\quad{}$m$:}
+		\item[\dquad{}$A$:] Accumulated Amount (\emph{Future Value})
+		\item[\dquad{}$P$:] Principal (\emph{Present Value})
+		\item[\dquad{}$r$:] Nominal Interest Rate Per Year
+		\item[\dquad{}$m$:] Yearly Number of Conversion Periods
+		\item[\dquad{}$t$:] Term (Number of Years)
+		\item[\quad{}As well as...]
+		\item[\dquad{}$i$:] Interest Rate Per Period
+		\begin{equation}
+			\frac{r}{m}
+		\end{equation}
+		\item[\dquad{}$n$:] Total Number of Conversion Periods
+		\begin{equation}
+			m * t
+		\end{equation}
+	\end{adescription}
+	\setstretch{1}
+	
+	\subsection*{2 Simple Interest}
+	The value of an investment after a given period of time with a given rate of interest (non-compounding).
+	\begin{equation}
+		A = P(1 + rt)
+	\end{equation}
+	
+	\subsection*{3 Compound Interest} 
+	Like simple interest, but you earn interest on your interest.
+	\begin{itemize}[label=--]
+		\item Interest that is periodically added to the principal
+		\item Earns interest on itself
+	\end{itemize}
+	
+	\begin{equation}
+		A = P(1 + i)^n
+	\end{equation}
+	
+	\subsection*{4 Continuous Compounding Interest}
+	Compound Interest that is compounding constantly.
+	\begin{equation}
+		A = Pe^{rt}
+	\end{equation}
+	
+	\subsection*{5 Effective Rate of Interest}
+	The yearly interest rate that would be the same as compounding \emph{m} times a year at rate \emph{r}. \\
+	\dquad{}The \bd{effective rate of interest} is the \bd{annual rate} which would yield the \bd{same accumulated amount} as the \bd{nominal rate} ($r$) compounded $m$ times over the term ($t$). It can also be called the \bd{annual percentage yield}.
+	\begin{equation}
+		r_{eff} = (1 + i)^m - 1
+	\end{equation}
+	where:
+	\begin{adescription}{\quad{}$r_{eff}$:}
+		\item[\quad{}$r_{eff}$:] Effective Rate of Interest
+	\end{adescription}
+	
+	\subsection*{6 Present Value}
+	The amount of money you would have to put in now to get \emph{A} out.
+	\subsubsection*{\dquad{}6.1 Compound Interest}
+	
+	\begin{equation}
+		P = A(1 + i)^{-n}
+	\end{equation}
+	
+	\subsubsection*{\dquad{}6.2 Continuous Interest}
+	
+	\begin{equation}
+		P = Ae^{-rt}
+	\end{equation}
+	
+		\setstretch{0.5}
+	\maketitle{}
+	
+	\section*{Annuity}
+	\subsection*{1 Preface}
+	\quad{}For the remainder of this paper, the following variables will be as set forth, unless specified otherwise.
+	\begin{adescription}{\quad{}$m$:}
+		\item[\dquad{}$R$:] Periodic Payment
+		\item[\dquad{}$P$:] Present Value
+		\item[\dquad{}$S$:] Future Value
+		\item[\dquad{}$r$:] Nominal Interest Rate Per Year
+		\item[\dquad{}$t$:] Term (\emph{Number of Years})
+		\item[\dquad{}$m$:] Yearly Payment Periods (\emph{Same as number of times compounded per year})
+		\item[As well as...] 
+		\item[\dquad{}$n$:] Total Payment Periods
+		\begin{equation}
+			m * t
+		\end{equation}
+		\item[\dquad{}$i$:] Interest Rate Per Period
+		\begin{equation}
+			\frac{r}{m}
+		\end{equation}
+	\end{adescription}
+	\setstretch{1}
+	
+	\subsection*{2 Future Value "S"}
+	How much you will have total.
+	\begin{equation} \label{fv}
+		S = R[ \frac{(1+i)^n-1}{i} ]
+	\end{equation}
+	
+	\subsection*{3 Present Value "P"}
+	How much you would have to invest now to match a given annuities final value.
+	\begin{equation} \label{pv}
+		P = R[ \frac{1-(1+i)^{-n}}{i} ]
+	\end{equation}
+	
+	\subsection*{4 Amortization Formula}
+	Paying off a loan with period payments, interest will be working against you.
+	
+	The periodic payment $R$ on a loan of $P$ dollars to be amortized over n periods with interest charged at the rate of $i$ per period.
+	
+	\begin{equation} \label{af}
+		R = \frac{Pi}{1-(1+i)^{-n}}
+	\end{equation}
+	
+	\subsection*{5 Calculate R when saving up to a value (not paying off)}
+	
+	\begin{equation}
+		R = \frac{Pi}{(1+i)^n-1}
+	\end{equation}
+	
+	\subsection*{6 Equity}
+	
+	\begin{itemize}[label=--]
+		\item Find payment per period for loan using the amortization formula (\ref{af})
+		\item Plug that $R$ into present value formula (\ref{pv}) with $n = \text{number of periods remaining}$, save result as \emph{current}.
+		\item Solve for $\text{Total} - \text{current}$
+	\end{itemize}
+	
+	\section{Sets}
+		\setstretch{0.82}
+	\maketitle{}
+	
+	\subsection*{}
+	
+	\subsection*{Set Notation}
+	Roster Notation: $ A = \{ a, b, c \} $ or $ A = \{ a, b, c, ..., z \} $ \\
+	Set Builder Notation: $ A = \{\,x \mid x \text{ is a lowercase character in the Latin alphabet }\,\}$
+	
+	\subsection*{Terminology and implications}
+	Given sets...
+	\begin{align*}
+		A &= \{ a, b, c \} \\
+		B &= \{ a, b, c, ..., z \} \\
+		C &= \{ a, e, i, o, u \} \\
+		D &= \{ a, i, u, e, o \} \\
+		E &= \{ a, e, i \}
+	\end{align*}
+	We know
+	\begin{align*}
+		& a \in A              & &\text{a is an element of A} \\
+		& e \notin A        & &\text{e is not an element of A} \\
+		& A \notin A        & &\text{A set cannot be an element of a set} \\
+		& \O = \{ \}           & & \\
+		& U = \text{All elements of interest} & & \\
+		& C = D               && \\
+		& C \neq E          & & \\
+		& E \subset C     & &\text{E is a proper subset of C} \\
+		& E \subseteq C & &\text{E is a subset of C} \\
+		& A \cup E = \{ a, b, c, e, i \} & &\text{A union E equals everything in A or E} \\
+		& A \cap E = \{ a \} & &\text{A join E equals everything in A and E} \\
+		& A^c = \{ d, e, f, ..., z \} & &\text{The compliment of A is all elements in the universal set and not in A}
+	\end{align*}
+	
+	\subsection*{Laws and Properties}
+	Commutative
+	\begin{align*}
+		A \cup B &= B \cup A \\
+		A \cap B &= B \cap A
+	\end{align*}
+	Associative
+	\begin{align*}
+		A \cup (B \cup C) &= (A \cup B) \cup C \\
+		A \cap (B \cap C) &= (A \cap B) \cap C
+	\end{align*}
+	Distributive
+	\begin{align*}
+		A \cup (B \cap C) &= (A \cup B) \cap (A \cup C) \\
+		A \cap (B \cup C) &= (A \cap B) \cup (A \cap C)
+	\end{align*}
+	De Morgans Laws
+	\begin{align*}
+		(A \cup B)^c &= A^c \cap B^c \\
+		(A \cap B)^c &= A^c \cup B^c
+	\end{align*}
+	
+	\subsection*{Combinatorics}
+	\begin{align*}
+		n(S) &= \text{Number of unique items in set S} \\
+		n(A \cup B) &= n(A) + n(B) - n(A \cap B) \\
+		n(A \cup B \cup C) &=  n(A) + n(B) + n(C) \\
+		& - n(A \cap B) - n(A \cap C) \\
+		& - n(B \cap C) + n(A \cap B \cap C)
+	\end{align*}
+	
+	\subsection*{Fundamental Counting Principal}
+	
+	\begin{align*}
+		m \text{ ways of performing task } T_1 \\
+		n \text{ ways of performing task } T_2 \\
+		\therefore m * n \text{ ways of performing } T_1 \text{ followed by } T_2
+	\end{align*}
+	
+	\subsection*{Permutations \& Combinations}
+	
+	\subsubsection*{Permutations (Order)}
+	Permutations of a \emph{distinct set} is an arrangement of those objects in a \emph{definite} order.
+	
+	\begin{align*}
+		P(n, n) &= n! \\
+		P(n, r) &= \frac{n!}{(n - r)!} \\
+		P(n, r) &= n \text{ nPr } r
+	\end{align*}
+	
+	Permutations of a \emph{non-distinct set}.
+	\begin{equation*}
+		P(n, r) = \frac{n!}{ n_1! * n_2! \dots n_n! }
+	\end{equation*}
+	
+	An example...
+	\begin{center}
+		ATLANTA \\
+		A: 3, T: 2, N: 1, L: 1, Total: 7 \\
+		$ \frac{7!}{3! * 2! * 1! * 1!} $
+	\end{center}
+	
+	\subsubsection*{Combinations (Unordered)}
+	\begin{align*}
+		C(n, r) &= \frac{n!}{r!(n-r)!} \\
+		C(n, r) &= n \text{ nCr } r
+	\end{align*}
+	\section{Probability Examples}
+		\setstretch{0.82}
+	\maketitle{}
+	
+	\subsection*{Symbols}
+	\begin{align*}
+		n \text{ choose } x = {n \choose x}
+	\end{align*}
+	
+	\subsection*{Children}
+	\par In a \bd{four-child} family, what are the odds of the following?
+	\begin{equation*}
+		\text{Total} = 2^4 = 16
+	\end{equation*}
+	(a) Three girls and a boy in the family?
+	\begin{equation*}
+		\frac{4!}{3!1!} = \frac{24}{6} = 4
+	\end{equation*}
+	(b) A youngest child in the family who is a girl?
+	\begin{equation*}
+		1 * 2^3 = 8
+	\end{equation*}
+	(c) An oldest child and a youngest child in the family who are both boys
+	\begin{equation*}
+		1 * 2^2 * 1 = 4
+	\end{equation*}
+	
+	\subsection*{Cards}
+	\begin{equation*}
+		\text{Total} = {52 \choose \text{Number drawn}}
+	\end{equation*}
+	\noindent When drawing \bd{one card} what are the odds it is a \bd{club} or \bd{jack}?
+	\begin{equation*}
+		13 + 4 - 1 = 16
+	\end{equation*}
+	
+	\noindent When drawing \bd{two cards} What are the odds it is a \bd{pair}?
+	\begin{equation*}
+		13 * {4 \choose 2}
+	\end{equation*}
+	
+	\subsection*{Coin}
+	\par A coin is tossed \bd{six} times. What are the odds of the following?
+	\begin{equation*}
+		\text{Total} = 2^6 = 64
+	\end{equation*}
+	(a) What are the odds the coin lands on heads more than one?
+	\begin{equation*}
+		1 - \frac{{6 \choose 0} + {6 \choose 1}}{\text{Total}} = 1 - \frac{7}{64}
+	\end{equation*}
+	(b) The coin lands on heads exactly 2 times?
+	\begin{equation*}
+		{6 \choose 2}
+	\end{equation*}
+	
+	\subsection*{Defection}
+	\par Lots of 36. Sample of 8. Any defective = rejection. Contains 2 defective. What are the odds of shipping?
+	\begin{equation*}
+		\text{Total} = {36 \choose 8}
+	\end{equation*}
+	\begin{align*}
+		34 \choose 8
+	\end{align*}
+	\section{Probability and Stats}
+		\setstretch{0.82}
+	\maketitle{}
+	
+	\subsection*{Example Problems}
+	\subsubsection*{Example 1}
+	Three balls are selected at random without replacement from an urn containing four green balls and six red balls. Let the random variable X denote the number of green balls drawn. \\
+	(a) List the outcomes of the experiment. \\
+	\indent \{GGG, GGR, GRG, RGG, GRR, RGR, RRG, RRR\} \\
+	(b) Find the value assigned to each outcome of the experiment by the random variable X. \\
+	\indent \{3, 2, 2, 2, 1, 1, 1, 0\} \\
+	(c) Find the event consisting of the outcomes to which the value of 0 has been assigned by X. \\
+	\indent \{RRR\}
+	
+	\subsubsection*{Example 2}
+	Let X denote the random variable that gives the sum of the faces that fall uppermost when two fair dice are rolled. Find P(X = 2). \\
+	\emph{We know that there are 36 total outcomes and only 1 of those results in X = 2 (a roll of 1 and 1).}
+	\begin{equation*}
+		\frac{1}{36} = 0.03
+	\end{equation*}
+	
+	\subsubsection*{Example 3}
+	Determine whether the table gives the probability distribution of the random variable X. Explain your answer.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c| }
+			\hline
+			x & -2 & -1 & 0 & 1 & 2 \\
+			P(X=x) & 0.1 & 0.2 & 0.3 & 0.1 & 0.2 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	No, because the sum of the probabilities is less than 1.
+	
+	\subsubsection*{Example 4}
+	Find the expected value E(X) of a random variable X having the following probability distribution.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c| }
+			\hline
+			x & -2 & 2 & 6 & 10 & 14 & 18 \\
+			P(X=x) & 0.18 & 0.09 & 0.19 & 0.09 & 0.12 & 0.33 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	\begin{align*}
+		E(X) =& -2(0.18) + 2(0.09) + 6(0.19) + 10(0.09) + \\& 14(0.12) + 18(0.33) = 9.48
+	\end{align*}
+	
+	\subsubsection*{Example 5}
+	Use the formula $C(n, x)p^xq^{n-x}$ to determine the probability of the given event. \\
+	\indent The probability of exactly \bd{zero} successes in \bd{nine} trials of a binomial experiment in which $p = \frac{1}{2}$
+	\begin{equation*}
+		C(9, 0) * (\frac{1}{4})^0 * (\frac{3}{4})^9 = 0.0751
+	\end{equation*}
+	
+	\subsubsection*{Example 6}
+	The scores on an economics examination are normally distributed with a mean of \bd{68} and a standard deviation of \bd{14}. If the instructor assigns a grade of A to \bd{12\%} of the class, what is the lowest score a student may have and still obtain an A? \\
+	\begin{equation*}
+		100\% - 12\% = 88\%
+	\end{equation*}
+	Then, find 88\% on the \emph{Appendix of Tables} which ends up being $\approx$ 1.17 \\
+	Next, add the multiply by the standard deviation and add the mean.
+	\begin{equation*}
+		68 + (1.175 * 14) = 84.45
+	\end{equation*}
+	
+	\subsection*{Distribution of Random Variables}
+	Flip a coin three times and let X denote the number of heads.
+	\begin{center}
+		\begin{tabular}{ |c|c|c|c|c|c|c|c|c| }
+			\hline 
+			Outcome & HHH & HHT & HTH & HTT & THH & THT & TTH &  TTT \\
+			Value(x) & 3 & 2 & 2 & 1 & 2 & 1 & 1 & 0 \\
+			\hline
+		\end{tabular}
+	\end{center}
+	
+	\subsection*{Binomial Distribution}
+	\begin{equation*}
+		C(n, x) * p^x * q^{n - x}
+	\end{equation*}
+	where... \\
+	\indent n: Number of trials \\
+	\indent x: Number of successes \\
+	\indent p: Chance of success \\
+	\indent q: Chance of failure (1 - p) 
+	
+	\subsection*{Calculator Info}
+	\bd{Given the \emph{mean}, the \emph{standard deviation}, find the percent in range \emph{min}-\emph{max}} \\
+	\indent 2nd \ra DISTR \ra (2) normalcdf \\
+	\indent lower, upper, $\mu$ (mean), $\sigma$ (standard deviation) \\
+	
+	\noindent \bd{Find the mean, standard deviation, mode, and median} \\
+	\indent STAT \ra 1 (Edit) \\
+	\indent Fill in L1 with list and L2 with frequency list (if applicable, otherwise blank) \\
+	\indent STAT \ra (Right Arrow) CALC \ra (1) 1-Var Stats \\
+	\indent Set List: to L1 \\
+	\indent 2nd \ra LIST \ra (1) L1 \\
+	\indent Repeat with FreqList and L2 if applicable \\
+	\indent Mean: $\overline{x}$ \\
+	\indent Standard Deviation: $\sigma{}x$ \\
+	\indent Median: Med \\
+	
+	\subsection*{Matrix Information}
+	Matrix...  2nd \ra $x^{-1}$ (Matrix) \\
+	To solve a system of equations... \\
+	(Find the identity of the variables)
+	\begin{align*}
+		1x + 2y = 5 \text{ and } 3x + 4y = 6 \\
+		\begin{bmatrix}
+			1 & 2 \\
+			4 & 5
+		\end{bmatrix}
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			3 \\
+			6
+		\end{bmatrix} \text{ in general form is }
+		A
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+		=
+		B \\
+		A^{-1} B =
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+	\end{align*}
+	
+\end{document}
