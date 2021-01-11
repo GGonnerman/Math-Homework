@@ -12,7 +12,7 @@
 \usepackage{enumitem} % Allow for widest tag in enumerate
 
 \renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
-\newcommand*\ra{$\rightarrow$}
+\newcommand*\ra{$\rightarrow$ }
 
 \newenvironment{adescription}[1]
 {\begin{list}{}%
@@ -116,11 +116,11 @@
 	\indent q: Chance of failure (1 - p) 
 	
 	\subsection*{Calculator Info}
-		Given the \emph{mean}, the \emph{standard deviation}, find the percent in range \emph{min}-\emph{max} \\
+		\bd{Given the \emph{mean}, the \emph{standard deviation}, find the percent in range \emph{min}-\emph{max}} \\
 	\indent 2nd \ra DISTR \ra (2) normalcdf \\
 	\indent lower, upper, $\mu$ (mean), $\sigma$ (standard deviation) \\
 	
-	\noindent Find the mean, standard deviation, mode, and median \\
+	\noindent \bd{Find the mean, standard deviation, mode, and median} \\
 	\indent STAT \ra 1 (Edit) \\
 	\indent Fill in L1 with list and L2 with frequency list (if applicable, otherwise blank) \\
 	\indent STAT \ra (Right Arrow) CALC \ra (1) 1-Var Stats \\
@@ -129,6 +129,38 @@
 	\indent Repeat with FreqList and L2 if applicable \\
 	\indent Mean: $\overline{x}$ \\
 	\indent Standard Deviation: $\sigma{}x$ \\
-	\indent Median: Med
+	\indent Median: Med \\
+	
+	\subsection*{Matrix Information}
+	Matrix...  2nd \ra $x^{-1}$ (Matrix) \\
+	To solve a system of equations...
+	\begin{align*}
+		1x + 2y = 5 \text{ and } 3x + 4y = 6 \\
+		\begin{bmatrix}
+			1 & 2 \\
+			4 & 5
+		\end{bmatrix}
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+		=
+		\begin{bmatrix}
+			3 \\
+			6
+		\end{bmatrix} \text{ in general form is }
+		A
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+		=
+		B \\
+		A^{-1} B =
+		\begin{bmatrix}
+			x \\
+			y
+		\end{bmatrix}
+	\end{align*}
 
 \end{document}
