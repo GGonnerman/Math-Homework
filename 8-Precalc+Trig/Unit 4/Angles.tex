@@ -1,0 +1,99 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+\newcommand{\ra}{$\rightarrow$ }
+\newcommand{\de}{^\circ}
+
+\title{Angles}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.5}
+	\maketitle{}
+	
+	\subsection{Angle Relationships}
+	Complimentary: Positive angles that add to $90^\circ$ or $\frac{\pi}{2}$ \\
+	Supplementary: Positive angles that add to $180^\circ$ or $\pi$
+	
+	\subsection{Degree Units}
+	\begin{align*}
+		1\de &= 60'  \text{ minutes} \\
+		1' &= 60'' \text{ seconds} \\
+		1\de &= 3600 ''
+	\end{align*}
+	\subsection{Transfer}
+	\subsubsection{RMS \ra Degrees}
+	\begin{equation*}
+		X^\circ + Y' + Z'' = (X 
+		+ \frac{y}{60} + \frac{z}{3600})\de
+	\end{equation*}
+	\subsubsection{Degrees \ra RMS}
+	\begin{align*}
+		& 47.31\de \\
+		& 47\de + (0.31 * 60') \\
+		& 47\de + 18.6' \\
+		& 47\de + 18' + (0.6 * 60'') \\
+		& 47\de + 18' + 36''
+	\end{align*}
+	
+	\subsection{Formulas}
+	Make sure to check units
+	Assume: \\
+	\indent $\theta$: Central Angle (Radians) \\
+	\indent $r$: Radius \\
+	\indent $t$: Time
+	
+	\subsubsection{Arc Length (\emph{S})}
+	\begin{equation*}
+		S = r * \theta
+	\end{equation*}
+
+	\subsubsection{Area of Sector (\emph{A})}
+	\begin{equation*}
+		A = \frac{1}{2} * r^2 * \theta
+	\end{equation*}
+
+	\subsubsection{Angular Speed ($\omega$)}
+	\begin{equation*}
+		\omega = \frac{\theta}{t}
+	\end{equation*}
+
+	\subsubsection{Linear Speed (\emph{v})}
+	\begin{equation*}
+		v = \frac{r * \theta}{t} = \frac{s}{t}
+	\end{equation*}
+	
+\end{document}
