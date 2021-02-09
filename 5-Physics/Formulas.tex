@@ -1,0 +1,92 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+\newcommand{\ra}{$\rightarrow$ }
+\newcommand{\de}{^\circ}
+
+\title{Physics Formulas}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{0.5}
+	\maketitle{}
+	
+	\subsection*{Velocity}
+	\subsubsection*{Constant Velocity}
+	\begin{align*}
+		v &= \frac{d}{t}  \\
+		d &= v * t \\
+		t &= \frac{d}{v}
+	\end{align*}
+	\subsubsection*{Accelerated Velocity}
+	\begin{align*}
+		a &= \frac{v_f - v_i}{t} \\
+		v_f &= at + v_i \\
+		d &= \frac{1}{2}at^2 + v_i t \\
+		v_f^2 &= 2ad + v_i^2 \\
+		d &= \frac{v_i + v_f}{2} * t
+	\end{align*}
+	\begin{adescription}{\dquad{}$k$:}
+		\item[\dquad{}$a$:] Acceleration
+		\item[\dquad{}$t$:] Time
+		\item[\dquad{}$d$:] Displacement
+		\item[\dquad{}$v_i$:] Velocity Initial
+		\item[\dquad{}$v_f$:] Velocity Final
+	\end{adescription}
+	
+	\subsection*{Energy}
+	\subsubsection*{\quad Gravitational Potential Energy}
+	\begin{equation*}
+		PE_{grav} = mass * gravity * height
+	\end{equation*}
+	\subsubsection*{\quad Elastic Potential Energy}
+	\begin{equation*}
+		PE_{spring} = 0.5 * k * x^2
+	\end{equation*}
+	\begin{adescription}{\dquad{}$k$:}
+		\item[\dquad{}$k$:] Spring Compression
+		\item[\dquad{}$x$:] Amount of stretch or compression (relative to equilibrium position)
+	\end{adescription}
+	\subsubsection*{\quad Force for a Rubber Band}
+	\begin{equation*}
+		F_{\text{rubber band}} = k * x
+	\end{equation*}
+	\subsubsection*{\quad Kinetic Energy}
+	\begin{equation*}
+		KE = 0.5 * mass * velocity^2
+	\end{equation*}
+
+\end{document}
