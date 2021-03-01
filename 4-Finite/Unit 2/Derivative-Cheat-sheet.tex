@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+\newcommand{\nine}{\frac{\pi}{2}}
+\newcommand{\dx}{\frac{d}{dx}}
+\newcommand{\nh}{\\ \hline}
+
+\newcolumntype{L}{>{$}l<{$}}
+
+\title{\vspace{-5ex}Derivatives Cheat sheet  \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{1}
+	\maketitle{}
+	
+	\subsection*{Common Functions}
+	\begin{center}
+	\begin{tabular}{| L | L |}
+		\hline
+		\text{Equation} & \text{Derivative}
+		\nh c & 0
+		\nh c*x & c * \dx(x)
+		\nh e^x & e^x
+		\nh e^{f(x)} & f'(x)*e^{f(x)}
+		\nh ln(x) & \frac{1}{x}
+		\nh ln(f(x)) & \frac{1}{f(x)}*f'(x)
+		\nh
+	\end{tabular}
+\end{center}
+
+\subsection*{Trigonometric Derivatives}
+\begin{align*}
+	& \dx sin = cos & \dx cos &= -sin & \\
+	& \dx tan = sec^2 & \dx cot &= -csc^2 & \\
+	& \dx sec = sec * tan & \dx csc &= -csc * cot &
+\end{align*}
+
+\subsection*{Derivative Rules}
+\indent \indent Power Rule
+\begin{equation*}
+	\dx(x^n) = n * x^{n-1}
+\end{equation*}
+
+Product Rule
+\begin{equation*}
+	\dx(f(x) * g(x)) = f'(x)g(x) + g'(x)f(x)
+\end{equation*}
+
+Quotient Rule
+\begin{equation*}
+	\dx(\frac{f(x)}{g(x)}) = \frac{ f'(x)g(x) - g'(x)f(x) }{ (g(x))^2 }
+\end{equation*}
+
+Chain Rule
+\begin{equation*}
+	\dx f(g(x)) = f'(g(x)) * g'(x)
+\end{equation*}
+
+Nested Chain Rule
+\begin{align*}
+	\dx f(g(h(x))) = & f'(g(h(x))) \\
+						     & * g'(h(x)) \\
+						     & * h'(x)
+\end{align*}
+
+\end{document}
