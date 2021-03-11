@@ -1,0 +1,101 @@
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+\usepackage{amstext} % for \text macro
+\usepackage{array}   % for \newcolumntype macro
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+\newcommand{\nine}{\frac{\pi}{2}}
+\newcommand{\dx}{\frac{d}{dx}}
+\newcommand{\nh}{\\ \hline}
+
+\newcolumntype{L}{>{$}l<{$}}
+
+\title{\vspace{-5ex}Derivatives Cheat sheet  \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\setstretch{1}
+	\maketitle{}
+	
+	\subsection*{How to write}
+	Rect $(x, y)$ \\
+	Polar $(r, \theta)$ \\
+	Compass: $r \text{ at } \theta$
+	
+	\subsection*{Polar Coordinates}
+	
+	\begin{align*}
+		\cos(\theta) &= \frac{x}{r} && & \sin(\theta) &= \frac{y}{r} \\
+		x &= r * \cos(\theta) && & y &= r * \sin(\theta) \\
+		r^2 &= \pm \sqrt{x^2 + y^2} & & & \theta &= \tan^{-1}(\frac{y}{x})
+	\end{align*}
+
+	\noindent $\theta$ is counter-clockwise from the positive x-axis \\
+	$\theta$ may need $\pm$ 180 or $\pi$  \\
+	Polar things can be represented many different ways
+	
+	\subsection*{Compass Coordinates}
+	$\theta$ is clockwise from the positive y-axis and is always positive \\
+	r and $\theta$ are both always positive \\
+	\emph{visualize where it should be}
+	
+	\subsection*{Imaginary Numbers}
+	$a+bi$ $\rightarrow$ $r(\cos(\theta)+i\sin(\theta)) = r*cis(\theta)$ \\
+	\indent $r = sqrt(a^2+b^2)$ \\
+	\indent $\theta = \tan^{-1}(\frac{b}{a})$ \\
+	\indent \indent Make sure in right quadrant
+	
+	\noindent Multiplying
+	\begin{align*}
+		[r_1 cis(\theta_1)] * [r_2 cis(\theta_2)] = (r_1*r_2) cis(\theta_1+\theta_2)
+	\end{align*}
+	Dividing
+	\begin{align*}
+		\frac{r_1 cis(\theta_1)}{ r_2 cis(\theta_2)} = (\frac{r_1}{r_2}) cis(\theta_1-\theta_2)
+	\end{align*}
+
+	\noindent Raising to a power (n $\ge$ 1 and positive integer)
+	\begin{align*}
+		[r cis(\theta)]^n = r^n cis(n * \theta)
+	\end{align*}
+
+	\noindent Getting $n^\text{th}$ root of 
+	\begin{align*}
+		[r cis(\theta)]^\frac{1}{n} = r^\frac{1}{n} cis(\frac{\theta}{n} + \frac{360}{n} * k)
+	\end{align*}
+	where k = 0, 1, 2, ..., n - 1
+	
+	
+
+\end{document}
