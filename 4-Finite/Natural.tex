@@ -1,0 +1,165 @@
+%\documentclass[twocolumn]{article}
+\documentclass{article}
+
+\usepackage{amsmath, amssymb} % Math formatting and symbols
+\usepackage{graphicx} % Insert graphics
+\usepackage{wrapfig} % Allow text to wrap around images
+\usepackage[cm]{fullpage} % Smaller margins and header/footer
+\usepackage{setspace}
+\usepackage{gensymb} % degree symbol
+
+\usepackage{float}
+
+\usepackage{enumitem} % Allow for widest tag in enumerate
+
+\usepackage{etoolbox}
+\newcommand{\zerodisplayskips}{%
+	\setlength{\abovedisplayskip}{0pt}%
+	\setlength{\belowdisplayskip}{0pt}%
+	\setlength{\abovedisplayshortskip}{0pt}%
+	\setlength{\belowdisplayshortskip}{0pt}}
+\appto{\normalsize}{\zerodisplayskips}
+\appto{\small}{\zerodisplayskips}
+\appto{\footnotesize}{\zerodisplayskips}
+
+\renewcommand*\descriptionlabel[1]{\hspace\leftmargin$#1$}
+
+\newenvironment{adescription}[1]
+{\begin{list}{}%
+		{\renewcommand\makelabel[1]{##1\hfill}%
+			\settowidth\labelwidth{\makelabel{#1}}%
+			\setlength\leftmargin{\labelwidth}
+			\addtolength\leftmargin{\labelsep}}}
+	{\end{list}}
+
+\newcommand{\bd}{\textbf}
+\newcommand{\dquad}{\quad{}\quad{}}
+
+\newcommand{\ddx}{\frac{d}{dx}}
+\newcommand{\dydx}{\frac{dy}{dx}}
+
+\renewcommand{\a}{\alpha}
+\renewcommand{\b}{\beta}
+
+\title{\vspace{-5ex}Everything about $e$ (in relation to derivatives) \vspace{-5ex}}
+\author{}
+\date{}
+
+\begin{document}
+	\maketitle{}
+	\noindent Layout of what each named equation shows \\
+	\indent 1: Derivative of $e^x$ is plainly $e^x$ \\
+	\indent 2: Derivative of $e^{f(x)}$ is $e^{f(x)} * f'(x)$ \\
+	\indent 3: $a^{f(x)}$ is equivalent to $e^{f(x)*\ln(x)}$ \\
+	\indent 4: Derivative of $a^{f(x)}$ is $a^{f(x)} * \ln(a) * f'(x)$ \\
+	\indent 5: Derivative of natural log ( $\ln(f(x))$ ) is $\frac{f'(x)}{f(x)}$ \\
+	\indent 6: Derivative of $x^{f(x)}$ is $x^{f(x)} * [f(x)*\ln(x) + \frac{f(x)}{x}]$ \\
+	\indent 7: Derivative of $f(x)^{g(x)}$ is $f(x)^{g(x)} * [g'(x)*\ln(f(x)) + \frac{f'(x)}{f(x)}*g(x)]$ \\ \\
+	To start, we must find the derivative of $e^x$. To do this we can look at the power series of the "natural exponential function" ($e^x$) which is as follows:
+	\begin{align*}
+		e^x
+		&= \sum_{n=0}^\infty \frac{x^n}{n!} \\
+		&\text{First few terms written out} \\
+		&= \frac{x^0}{0!} + \frac{x^1}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots \\
+		&\text{which simplifies to} \\
+		&= 1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots
+	\end{align*}
+\\
+This, though initially looking more complex, will much more easily allow us to find the derivative.
+	\begin{align*}
+		\ddx[e^x] = \ddx&[1 + x + \frac{x^2}{2!} + \frac{x^3}{3!} + \frac{x^4}{4!} + \dots] \\
+		=&\text{ }0 + 1 + \frac{2x}{2!} + \frac{3x^2}{3!} + \frac{4x^3}{4!} + \dots \\
+		&\text{Re-write to make it more clear what will cancel} \\
+		=&\text{ }0 + 1 + \frac{2x}{2*1!} + \frac{3x^2}{3*2!} + \frac{4x^3}{4*3!} + \dots \\
+		=&\text{ }0 + 1 + \frac{x}{1!} + \frac{x^2}{2!} + \frac{x^3}{3!} + \dots \\
+		=&\text{\quad\quad}1 + x + \frac{x^2}{2!} + \frac{x^3}{3!}+\dots \\
+		&\text{Reference our earlier definition of $e^x$} \\
+		=&\text{ }e^x
+	\end{align*}
+	Therefore,
+	\begin{equation}
+		\ddx[e^x] = e^x
+	\end{equation} \\
+	This relationship is why e is so useful (and subsequently ln is as well) \\
+	Knowing this as well as the chain rule, we can easily show that
+	\begin{equation}
+	\ddx[e^{f(x)}] = e^{f(x)} * f'(x)
+	\end{equation} \\
+Next, we can look at the equation $a^{f(x)}$ and how it can be re-arranged to work more nicely in combination with the knowledge
+	\begin{align*}
+		a^{f(x)} &= u \\
+		\ln(a^{f(x)}) &= \ln(u) \\
+		\text{By power rule of logs (}& log(x^y) = y*log(x) \text{)} \\
+		f(x)*\ln(a) &= \ln(u) \\
+		\text{By definition of logs }& z = log_x(y); x^z = y \text{)} \\
+		e^{f(x)*\ln(a)} &= u
+	\end{align*}
+Therefore,
+	\begin{equation}
+		a^{f(x)} = e^{f(x)*\ln(a)}
+	\end{equation} \\ \\ \\
+Now we can solve for the derivative of $a^{f(x)}$.
+	\begin{align*}
+		&\ddx[a^{f(x)}]
+	\end{align*}
+	Start by using the equality from equation (3)
+	\begin{align*}
+		&\ddx[e^{f(x)*\ln(a)}]
+	\end{align*}
+	Then we can reference the equality from equation (2) with pretty much any other log base, this wouldn't work out as nicely as it does with e
+	\begin{align*}
+		e^{f(x)*\ln(a)}*\ddx[f(x)*\ln(a)]
+	\end{align*}
+	Here, $\ln(a)$ is a constant and can be treated as such \\
+	Also, the equality from equation (3) can be utilized
+	\begin{align*}
+		a^{f(x)} * \ln(a) * \ddx[f(x)] \\
+		a^{f(x)} * \ln(a) * f'(x)
+	\end{align*}
+Therefore,
+	\begin{equation}
+		\ddx[a^{f(x)}] = a^{f(x)} * \ln(a) * f'(x)
+	\end{equation}
+Finally, we can use implicit differentiation to solve for the derivative of natural log ($\ln(f(x))$)
+	\begin{align*}
+		\ln(f(x)) &= y \\
+		\text{Again, utilize defin}&\text{ition of derivatives} \\
+		e^y &= x \\
+		\text{Then, get the der}&\text{ivative of both sides} \\
+		\ddx[e^y] &= \ddx[x] \\
+		\dydx * e^y &= 1 \\
+		\text{Use the equilivency provided}&\text{ at the start of this equation} \\
+		\dydx * e^{ln(f(x))} &= f'(x) \\
+		\text{Use the fact that }& b^{log_b(x)} = x \\
+		\dydx * f(x) &= f'(x) \\
+		\dydx &= \frac{f'(x)}{f(x)}
+	\end{align*}
+Therefore,
+	\begin{equation}
+		\ddx[ln(f(x))] = \frac{f'(x)}{f(x)}
+	\end{equation}
+Further expansions (written but not explained)
+	\begin{align*}
+		x^{f(x)} &= e^{f(x)*\ln(x)} \\
+		\ddx[x^{f(x)}] &= \ddx[e^{f(x)*\ln(x)}] \\
+		&= e^{f(x)*\ln(x)} * \ddx[f(x) * \ln(x)] \\
+		&= e^{f(x)*\ln(x)} * [f'(x) * \ln(x) + \frac{1}{x} * f(x)] \\
+		&= e^{f(x)*\ln(x)} * [f'(x)*\ln(x) + \frac{f(x)}{x}] \\
+		&= x^{f(x)} * [f(x)*\ln(x) + \frac{f(x)}{x}]
+	\end{align*}
+Therefore,
+	\begin{equation}
+		\ddx[x^{f(x)}] = x^{f(x)} * [f(x)*\ln(x) + \frac{f(x)}{x}]
+	\end{equation} \\
+Further expansion (written but not explained)
+	\begin{align*}
+		f(x)^{g(x)} &= e^{g(x)*\ln(f(x))} \\
+		\ddx[f(x)^{g(x)}] &= \ddx[e^{g(x)*\ln(f(x))}] \\
+		&= e^{g(x)*\ln(f(x))} * \ddx[g(x)*\ln(f(x))] \\
+		&= f(x)^{g(x)} * [g'(x)*\ln(f(x)) + \frac{f'(x)}{f(x)}*g(x)]
+	\end{align*}
+Therefore,
+	\begin{equation}
+		\ddx[f(x)^{g(x)}] = f(x)^{g(x)} * [g'(x)*\ln(f(x)) + \frac{f'(x)}{f(x)}*g(x)]
+	\end{equation}
+\end{document}
