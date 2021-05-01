@@ -35,12 +35,12 @@
 \newcommand{\bd}{\textbf}
 \newcommand{\dquad}{\quad{}\quad{}}
 \newcommand{\nine}{\frac{\pi}{2}}
-\newcommand{\dx}{\frac{d}{dx}}
+\newcommand{\dx}{\,dx}
 \newcommand{\nh}{\\ \hline}
 
 \newcolumntype{L}{>{$}l<{$}}
 
-\title{\vspace{-5ex}Derivatives Cheat sheet  \vspace{-5ex}}
+\title{\vspace{-5ex}Integral Cheat sheet  \vspace{-5ex}}
 \author{}
 \date{}
 
@@ -52,56 +52,44 @@
 	\begin{center}
 	\begin{tabular}{| L | L |}
 		\hline
-		\text{Equation} & \text{Derivative}
-		\nh c & 0
-		\nh c*x & c * \dx(x)
-		\nh e^x & e^x
-		\nh e^{f(x)} & f'(x)*e^{f(x)}
-		\nh ln(x) & \frac{1}{x}
-		\nh ln(f(x)) & \frac{1}{f(x)}*f'(x)
-		\nh a^{f(x)} & a^{f(x)} * \ln(a) * f'(x)
+		\text{Equation} & \text{Antiderivative}
+		\nh 0 & C
+		\nh k & kx + C
+		\nh kf(x) \dx & k \int f(x) \dx
+		\nh \int [f(x) \pm g(x)] \dx & \int f(x) \dx \pm \int g(x) \dx
+		\nh e^x & e^x + C
+		\nh a^x & (\frac{1}{\ln(a)})a^x+C
+		\nh \frac{1}{x} & \ln|x| + C
+		\nh \ln{x} & x*\ln{x} - x
 		\nh
 	\end{tabular}
 \end{center}
 
-\subsection*{Trigonometric Derivatives}
+\subsection*{Trigonometric Integrals}
 \begin{align*}
-	& \dx sin = cos & \dx cos &= -sin & \\
-	& \dx tan = sec^2 & \dx cot &= -csc^2 & \\
-	& \dx sec = sec * tan & \dx csc &= -csc * cot &
+	& \int sin = -cos + C & & \int cos = sin + C \\
+	& \int tan = -\ln|cos| + C & & \int cot = \ln|sin| + C \\
+	& \int sec = \ln|sec + tan| + C & & \int csc = -\ln|csc + cot| + C
 \end{align*}
 
-\subsection*{Derivative Rules}
-\indent \indent Power Rule
-\begin{equation*}
-	\dx(x^n) = n * x^{n-1}
-\end{equation*}
-
-Product Rule
-\begin{equation*}
-	\dx(f(x) * g(x)) = f'(x)g(x) + g'(x)f(x)
-\end{equation*}
-
-Quotient Rule
-\begin{equation*}
-	\dx(\frac{f(x)}{g(x)}) = \frac{ f'(x)g(x) - g'(x)f(x) }{ (g(x))^2 }
-\end{equation*}
-
-Chain Rule
-\begin{equation*}
-	\dx f(g(x)) = f'(g(x)) * g'(x)
-\end{equation*}
-
-Nested Chain Rule
+\subsubsection*{Abnormal Trigonometric Integrals}
 \begin{align*}
-	\dx f(g(h(x))) = & f'(g(h(x))) \\
-						     & * g'(h(x)) \\
-						     & * h'(x)
+	& \int sec^2 = tan + C & & \int sec*tan = sec + C \\
+	& \int csc^2 = -cot + C & & \int csc*cot = -csc + C \\
+	& \int tan = \ln|sec| & &
 \end{align*}
 
-\subsection*{Other things to note}
+\subsubsection*{Inverse Trigonometric Integrals (a is positive)}
 \begin{align*}
-	ln(\frac{x}{y}) = ln(x) - ln(y) && ln(xy) = ln(x) + ln(y) && ln(x^y) = y*ln(x)
+	& \int \frac{1}{ \sqrt{a^2 - x^2} } = \arcsin(\frac{x}{a}) + C \\
+	& \int \frac{1}{a^2 + x^2} = \frac{1}{a} \arctan(\frac{x}{a}) + C \\
+	& \int \frac{1}{x \sqrt{x^2-a^2} } = \frac{1}{a} \text{arcsec}(\frac{|x|}{a}) + C
 \end{align*}
+
+\subsection*{Integration Rules}
+\indent \indent Power Rule ($n \ne -1$)
+\begin{equation*}
+	\int x^n = \frac{x^{n+1}}{n+1} + C
+\end{equation*}
 
 \end{document}
