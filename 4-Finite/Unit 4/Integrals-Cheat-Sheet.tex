@@ -60,7 +60,8 @@
 		\nh e^x & e^x + C
 		\nh a^x & (\frac{1}{\ln(a)})a^x+C
 		\nh \frac{1}{x} & \ln|x| + C
-		\nh \ln{x} & x*\ln{x} - x
+		\nh \ln{x} & x(\ln|x| - 1) + C
+		\nh \log_b(x) & \frac{1}{\ln(b)} [x(\ln|x|-1)] + C
 		\nh
 	\end{tabular}
 \end{center}
@@ -69,7 +70,7 @@
 \begin{align*}
 	& \int sin = -cos + C & & \int cos = sin + C \\
 	& \int tan = -\ln|cos| + C & & \int cot = \ln|sin| + C \\
-	& \int sec = \ln|sec + tan| + C & & \int csc = -\ln|csc + cot| + C
+	& \int sec = \ln|sec + tan| + C & & \int csc = \ln|csc - cot| + C
 \end{align*}
 
 \subsubsection*{Abnormal Trigonometric Integrals}

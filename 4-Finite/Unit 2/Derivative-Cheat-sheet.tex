@@ -35,12 +35,12 @@
 \newcommand{\bd}{\textbf}
 \newcommand{\dquad}{\quad{}\quad{}}
 \newcommand{\nine}{\frac{\pi}{2}}
-\newcommand{\dx}{\,dx}
+\newcommand{\dx}{\frac{d}{dx}}
 \newcommand{\nh}{\\ \hline}
 
 \newcolumntype{L}{>{$}l<{$}}
 
-\title{\vspace{-5ex}Integral Cheat sheet  \vspace{-5ex}}
+\title{\vspace{-5ex}Derivatives Cheat sheet  \vspace{-5ex}}
 \author{}
 \date{}
 
@@ -52,36 +52,23 @@
 	\begin{center}
 	\begin{tabular}{| L | L |}
 		\hline
-		\text{Equation} & \text{Antiderivative}
-		\nh 0 & C
-		\nh k & kx + C
-		\nh kf(x) \dx & k \int f(x) \dx
-		\nh \int [f(x) \pm g(x)] \dx & \int f(x) \dx \pm \int g(x) \dx
-		\nh e^x & e^x + C
-		\nh a^x & (\frac{1}{\ln(a)})a^x+C
-		\nh \frac{1}{x} & \ln|x| + C
+		\text{Equation} & \text{Derivative}
+		\nh c & 0
+		\nh c*x & c * \dx(x)
+		\nh e^x & e^x
+		\nh e^{f(x)} & f'(x)*e^{f(x)}
+		\nh ln(x) & \frac{1}{x}
+		\nh ln(f(x)) & \frac{1}{f(x)}*f'(x)
+		\nh a^{f(x)} & a^{f(x)} * \ln(a) * f'(x)
 		\nh
 	\end{tabular}
 \end{center}
 
-\subsection*{Trigonometric Integrals}
+\subsection*{Trigonometric Derivatives}
 \begin{align*}
-	& \int sin = -cos + C & & \int cos = sin + C \\
-	& \int tan = -\ln|cos| + C & & \int cot = \ln|sin| + C \\
-	& \int sec = \ln|sec + tan| + C & & \int csc = -\ln|csc + cot| + C
-\end{align*}
-
-\subsubsection*{Abnormal Trigonometric Integrals}
-\begin{align*}
-	& \int sec^2 = tan + C & & \int sec*tan = sec + C \\
-	& \int csc^2 = -cot + C & & \int csc*cot = -csc + C
-\end{align*}
-
-\subsubsection*{Inverse Trigonometric Integrals (a is positive)}
-\begin{align*}
-	& \int \frac{1}{ \sqrt{a^2 - x^2} } = \arcsin(\frac{x}{a}) + C \\
-	& \int \frac{1}{a^2 + x^2} = \frac{1}{a} \arctan(\frac{x}{a}) + C \\
-	& \int \frac{1}{x \sqrt{x^2-a^2} } = \frac{1}{a} \text{arcsec}(\frac{|x|}{a}) + C
+	& \dx sin = cos & \dx cos &= -sin & \\
+	& \dx tan = sec^2 & \dx cot &= -csc^2 & \\
+	& \dx sec = sec * tan & \dx csc &= -csc * cot &
 \end{align*}
 
 \subsection*{Derivative Rules}
